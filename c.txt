@@ -1,0 +1,29 @@
+self.centralwidget.setStyleSheet("border-image: url(backg.png); background-repeat: no-repeat; background-position: center")
+
+class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setupUi(self)
+
+
+stylesheet = """
+    QMainWindow {
+        border-image: url("backg.png"); 
+        background-repeat: no-repeat; 
+        background-position: center;
+    }
+"""
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    app.setStyleSheet(stylesheet)
+
+    w = MyWindow()
+#   MainWindow = QtWidgets.QMainWindow()
+#   ui = Ui_MainWindow()
+#   ui.setupUi(MainWindow)
+#   MainWindow.show()
+    w.show()
+    app.exec_()
